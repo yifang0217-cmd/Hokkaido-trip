@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 冬の旅｜賞雪吃蟹之旅</title>
+    <style>
+        /* 日系手札紙質風格底色 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Meiryo", "Microsoft JhengHei", sans-serif;
+            background-color: #f7f5ef;
+            margin: 0;
+            padding: 0;
+            color: #333333;
+            scroll-behavior: smooth; /* 平滑滾動 */
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* 雪花飄落特效樣式 */
+        .snowflake {
+            position: fixed;
+            top: -10px;
+            color: #ffffff;
+            user-select: none;
+            z-index: 9999;
+            pointer-events: none;
+            animation: fall linear infinite;
+            text-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10px) translateX(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(105vh) translateX(50px) rotate(360deg);
+                opacity: 0.3;
+            }
+        }
+
+        /* 上方導覽列（固定置頂） */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: #ede9df;
+            border-bottom: 1px solid #dcd6c8;
+            padding: 10px 20px;
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+        }
+        nav a {
+            text-decoration: none;
+            color: #555;
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            background-color: #f7f5ef;
+            border: 1px solid #dcd6c8;
+            border-radius: 4px;
+            white-space: nowrap;
+            transition: all 0.2s;
+        }
+        nav a:hover {
+            background-color: #333;
+            color: #fff;
+            border-color: #333;
+        }
+
+        /* 網頁主容器 */
+        .wrapper {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* 每日行程區塊間距 */
+        .day-block {
+            margin-bottom: 60px;
+            padding-top: 20px;
+            border-top: 2px dashed #dcd6c8;
+        }
+
+        /* 標題與副標 */
+        .page-header {
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            border-bottom: 1px solid #dcd6c8;
+            padding-bottom: 15px;
+        }
+        .page-header h1 {
+            margin: 0;
+            font-size: 1.8rem;
+            font-weight: normal;
+            letter-spacing: 1px;
+        }
+        .page-header .subtitle {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* 左右雙欄排版區塊 */
+        .content-section {
+            display: flex;
+            gap: 30px;
+            background-color: #f7f5ef;
+            align-items: flex-start;
+        }
+
+        /* 左側照片區：每天 6 張圖片排版（網格） */
+        .photo-box {
+            flex: 1.3;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2欄排列 */
+            gap: 10px;
+        }
+        .photo-box img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            display: block;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        /* 右側時間軸行程區 */
+        .timeline-box {
+            flex: 1;
+            background: #f7f5ef;
+            padding-left: 10px;
+        }
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #dcd6c8;
+            padding-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* 時間軸樣式 */
+        .timeline-item {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 25px;
+            border-left: 2px solid #dcd6c8;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -5px;
+            top: 4px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: #b87053;
+        }
+
+        .time {
+            font-weight: bold;
+            font-size: 0.9rem;
+            color: #444;
+            margin-bottom: 4px;
+        }
+        .desc {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+        }
+        .desc span {
+            color: #b83280;
+            font-weight: bold;
+        }
+
+        /* 響應式手機排版調整 */
+        @media (max-width: 768px) {
+            .content-section {
+                flex-direction: column;
+            }
+            .photo-box {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 上方導覽列 -->
+    <nav>
+        <a href="#day1">Day 1 啟程 ⇢抵達</a>
+        <a href="#day2">Day 2 北海道神宮 ▪ 吃蟹</a>
+        <a href="#day3">Day 3 溫泉</a>
+        <a href="#day4">Day 4 小樽</a>
+        <a href="#day5">Day 5 回程</a>
+    </nav>
+
+    <div class="wrapper">
+        
+        <!-- ==================== DAY 1 ==================== -->
+        <div id="day1" class="day-block">
+            <div class="page-header">
+                <h1>桃園 ✈️ 新千歲機場 ➔ 札幌</h1>
+                <div class="subtitle">12/9抵達日✈｜捕捉可愛的哆啦A夢與初雪氣息❄️</div>
+            </div>
+
+            <div class="content-section">
+                <div class="photo-box">
+                    <img src="2.jpg" alt="Day1 照片1">
+                    <img src="day1-2.jpg" alt="Day1 照片2">
+                    <img src="day1-3.jpg" alt="Day1 照片3">
+                    <img src="day1-4.jpg" alt="Day1 照片4">
+                    <img src="day1-5.jpg" alt="Day1 照片5">
+                    <img src="day1-6.jpg" alt="Day1 照片6">
+                </div>
+
+                <div class="timeline-box">
+                    <div class="timeline-title">
+                        <span>DAY 1</span>
+                        <span>抵達新千歲⛇</span>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">12:15</div>
+                        <div class="desc">✈️ <b>酷航起飛</b><br>桃園機場出發，直飛新千歲。</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">17:00</div>
+                        <div class="desc"><b>降落新千歲機場⛄</b><br>抵達航廈，會有可愛的<span>哆啦A夢玩偶歡迎您！</span></div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">18:30</div>
+                        <div class="desc">
+                            🏨 <strong>Holiday Inn Express 札幌薄野飯店 Check-in</strong><br>
+                            🚆 搭乘 JR 快速エアポート：從新千歲機場地下一樓的新千歲機場 JR 車站出發，搭乘開往札幌方向的 JR 快速列車。車程大約 37 分鐘即可抵達「札幌站」。<br>
+                            🔄 轉乘札幌市營地下鐵：<br>
+                            抵達札幌站後，跟隨指標前往地下鐵南北線的「札幌站」。<br>
+                            🚇 搭乘南北線（往真駒內方向），坐 2 站即可到達「薄野站」。再步行至飯店：<br>
+                            🚶 從薄野站出站後，步行約 3 至 5 分鐘即可抵達飯店。
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">19:30</div>
+                        <div class="desc">
+                            🍜 <strong>晚餐時光</strong><br>
+                            外出覓食札幌道地美食。
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">22:00</div>
+                        <div class="desc">
+                            🍶 <strong>居酒屋開張</strong><br>
+                            休息或喝喝小酒。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== DAY 2 ==================== -->
+        <div id="day2" class="day-block">
+            <div class="page-header">
+                <h1>札幌市區散策 ➔ 北海道神宮 ➔ 晚餐吃蟹</h1>
+                <div class="subtitle">12/10第二天｜感受雪景神宮與鮮美螃蟹饗宴🦀</div>
+            </div>
+
+            <div class="content-section">
+                <div class="photo-box">
+                    <img src="day2-1.jpg" alt="Day2 照片1">
+                    <img src="day2-2.jpg" alt="Day2 照片2">
+                    <img src="day2-3.jpg" alt="Day2 照片3">
+                    <img src="day2-4.jpg" alt="Day2 照片4">
+                    <img src="day2-5.jpg" alt="Day2 照片5">
+                    <img src="day2-6.jpg" alt="Day2 照片6">
+                </div>
+
+                <div class="timeline-box">
+                    <div class="timeline-title">
+                        <span>DAY 2</span>
+                        <span>北海道神宮・吃蟹</span>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">09:30</div>
+                        <div class="desc">🥞 <strong>悠閒早晨與早餐</strong><br>享用美味早餐，準備展開一日行程。</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">10:30</div>
+                        <div class="desc">⛩️ <strong>北海道神宮參拜</strong><br>搭乘地下鐵至中島公園或圓山公園，感受莊嚴的雪中神社氛圍。</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">13:00</div>
+                        <div class="desc">🦀 <strong>午餐：札幌市區享用美味螃蟹料理</strong><br>品嚐新鮮肥美的帝王蟹與毛蟹。</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">16:00</div>
+                        <div class="desc">🛍️ <strong>狸小路商店街血拼</strong><br>藥妝、伴手禮一次買齊。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== DAY 3 ==================== -->
+        <div id="day3" class="day-block">
+            <div class="page-header">
+                <h1>定山溪溫泉散策 ➔ 雪見溫泉療癒</h1>
+                <div class="subtitle">12/11第三天｜享受溫暖的雪中露天風呂♨️</div>
+            </div>
+
+            <div class="content-section">
+                <div class="photo-box">
+                    <img src="day3-1.jpg" alt="Day3 照片1">
+                    <img src="day3-2.jpg" alt="Day3 照片2">
+                    <img src="day3-3.jpg" alt="Day3 照片3">
+                    <img src="day3-4.jpg" alt="Day3 照片4">
+                    <img src="day3-5.jpg" alt="Day3 照片5">
+                    <img src="day3-6.jpg" alt="Day3 照片6">
+                </div>
+
+                <div class="timeline-box">
+                    <div class="timeline-title">
+                        <span>DAY 3</span>
+                        <span>溫泉療癒日</span>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">10:00</div>
+                        <div class="desc">🚌 <strong>搭乘溫泉專車出發</strong><br>前往定山溪溫泉區，沿途欣賞雪白山景。</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">12:30</div>
+                        <div class="desc">♨️ <strong>溫泉飯店 Check-in & 泡湯</strong><br>換上浴衣，享受極致的雪見露天溫泉。</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">18:00</div>
+                        <div class="desc">🍱 <strong>會席料理晚餐</strong><br>品嚐精緻的日式傳統會席料理。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== DAY 4 ==================== -->
+        <div id="day4" class="day-block">
+            <div class="page-header">
+                <h1>札幌 ➔ 小樽浪漫運河一日遊</h1>
+                <div class="subtitle">12/12第四天｜漫步玻璃工房與浪漫小樽運河✨</div>
+            </div>
+
+            <div class="content-section">
+                <div class="photo-box">
+                    <img src="day4-1.jpg" alt="Day4 照片1">
+                    <img src="day4-2.jpg" alt="Day4 照片2">
+                    <img src="day4-3.jpg" alt="Day4 照片3">
+                    <img src="day4-4.jpg" alt="Day4 照片4">
+                    <img src="day4-5.jpg" alt="Day4 照片5">
+                    <img src="day4-6.jpg" alt="Day4 照片6">
+                </div>
+
+                <div class="timeline-box">
+                    <div class="timeline-title">
+                        <span>DAY 4</span>
+                        <span>小樽浪漫行</span>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">09:00</div>
+                        <div class="desc">🚆 <strong>搭乘 JR 前往小樽</strong><br>沿著海景鐵路，車程約 40 分鐘。</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">10:30</div>
+                        <div class="desc">🚶 <strong>小樽運河與倉庫群散策</strong><br>欣賞浪漫的復古歐風建築與雪景交織。</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">13:00</div>
+                        <div class="desc">🍣 <strong>政壽司午餐</strong><br>品嚐新鮮道地的小樽握壽司。</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">15:30</div>
+                        <div class="desc">🕯️ <strong>堺町通商店街與音樂盒堂</strong><br>逛玻璃工藝品、買伴手禮。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ==================== DAY 5 ==================== -->
+        <div id="day5" class="day-block">
+            <div class="page-header">
+                <h1>札幌最後採購 ➔ 新千歲機場 ➔ 賦歸</h1>
+                <div class="subtitle">12/13第五天｜帶著滿滿回憶與戰利品快樂返航✈️</div>
+            </div>
+
+            <div class="content-section">
+                <div class="photo-box">
+                    <img src="day5-1.jpg" alt="Day5 照片1">
+                    <img src="day5-2.jpg" alt="Day5 照片2">
+                    <img src="day5-3.jpg" alt="Day5 照片3">
+                    <img src="day5-4.jpg" alt="Day5 照片4">
+                    <img src="day5-5.jpg" alt="Day5 照片5">
+                    <img src="day5-6.jpg" alt="Day5 照片6">
+                </div>
+
+                <div class="timeline-box">
+                    <div class="timeline-title">
+                        <span>DAY 5</span>
+                        <span>快樂返航</span>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">09:30</div>
+                        <div class="desc">🛒 <strong>最後採買與退房</strong><br>買齊北海道限定甜點與伴手禮。</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">12:00</div>
+                        <div class="desc">✈️ <strong>前往新千歲機場</strong><br>逛機場內的哆啦A夢愉快的天空樂園、拉麵道場。</div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="time">16:00</div>
+                        <div class="desc">🛫 <strong>搭機返回台灣</strong><br>結束美好的北海道冬日之旅！</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- 自動飄雪 JavaScript 特效 -->
+    <script>
+        function createSnowflake() {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            
+            // 隨機設定雪花大小、水平起始位置與落下速度
+            snowflake.style.left = Math.random() * window.innerWidth + 'px';
+            snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+            
+            const duration = Math.random() * 5 + 5; // 5秒到10秒落下
+            snowflake.style.animationDuration = duration + 's';
+            
+            document.body.appendChild(snowflake);
+
+            // 動畫結束後自動刪除元素，避免記憶體佔用
+            setTimeout(() => {
+                snowflake.remove();
+            }, duration * 1000);
+        }
+
+        // 每隔 300 毫秒產生一片新雪花
+        setInterval(createSnowflake, 300);
+    </script>
+</body>
+</html>

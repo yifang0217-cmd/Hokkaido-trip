@@ -13,31 +13,6 @@
             padding: 0;
             color: #333333;
             scroll-behavior: smooth; /* 平滑滾動 */
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        /* 雪花飄落特效樣式 */
-        .snowflake {
-            position: fixed;
-            top: -10px;
-            color: #ffffff;
-            user-select: none;
-            z-index: 9999;
-            pointer-events: none;
-            animation: fall linear infinite;
-            text-shadow: 0 0 5px rgba(0,0,0,0.1);
-        }
-
-        @keyframes fall {
-            0% {
-                transform: translateY(-10px) translateX(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(105vh) translateX(50px) rotate(360deg);
-                opacity: 0.3;
-            }
         }
 
         /* 上方導覽列（固定置頂） */
@@ -116,33 +91,15 @@
             flex: 1.3;
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* 2欄排列 */
-            gap: 15px;
+            gap: 10px;
         }
-        
-        /* 圖片卡片（包含圖片與說明文字） */
-        .photo-card {
-            background: #fff;
-            padding: 8px;
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-            border: 1px solid #e8e3d5;
-        }
-
-        .photo-card img {
+        .photo-box img {
             width: 100%;
-            height: 120px;
+            height: 140px;
             object-fit: cover;
             display: block;
-            border-radius: 3px;
-        }
-
-        /* 圖片下方文字說明 */
-        .photo-caption {
-            font-size: 0.75rem;
-            color: #666;
-            text-align: center;
-            margin-top: 6px;
-            letter-spacing: 0.5px;
+            border-radius: 4px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         /* 右側時間軸行程區 */
@@ -213,14 +170,14 @@
     <nav>
         <a href="#day1">Day 1 啟程 ⇢抵達</a>
         <a href="#day2">Day 2 北海道神宮 ▪ 吃蟹</a>
-        <a href="#day3">Day 3 一日遊程</a>
+        <a href="#day3">Day 3 溫泉</a>
         <a href="#day4">Day 4 小樽</a>
         <a href="#day5">Day 5 回程</a>
     </nav>
 
     <div class="wrapper">
         
-        <!-- ==================== DAY 1 ==================== -->
+        <!-- ==================== DAY 1 (6張圖) ==================== -->
         <div id="day1" class="day-block">
             <div class="page-header">
                 <h1>桃園 ✈️ 新千歲機場 ➔ 札幌</h1>
@@ -229,30 +186,12 @@
 
             <div class="content-section">
                 <div class="photo-box">
-                    <div class="photo-card">
-                        <img src="2.jpg" alt="機場打卡">
-                        <div class="photo-caption">新千歲機場哆啦A夢迎賓</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day1-2.jpg" alt="JR列車">
-                        <div class="photo-caption">搭乘 JR 快速列車</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="3.jpg" alt="飯店大廳">
-                        <div class="photo-caption">薄野飯店 Check-in</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day1-4.jpg" alt="街道雪景">
-                        <div class="photo-caption">初雪中的札幌街頭</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day1-5.jpg" alt="晚餐">
-                        <div class="photo-caption">道地拉麵晚餐</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day1-6.jpg" alt="居酒屋小酌">
-                        <div class="photo-caption">深夜居酒屋小酌</div>
-                    </div>
+                    <img src="2.png" alt="Day1 照片1">
+                    <img src="day1-2.jpg" alt="Day1 照片2">
+                    <img src="day1-3.jpg" alt="Day1 照片3">
+                    <img src="day1-4.jpg" alt="Day1 照片4">
+                    <img src="day1-5.jpg" alt="Day1 照片5">
+                    <img src="day1-6.jpg" alt="Day1 照片6">
                 </div>
 
                 <div class="timeline-box">
@@ -302,39 +241,21 @@
             </div>
         </div>
 
-        <!-- ==================== DAY 2 ==================== -->
+        <!-- ==================== DAY 2 (6張圖) ==================== -->
         <div id="day2" class="day-block">
             <div class="page-header">
-                <h1>飯店➔ 北海道神宮 ➔ 晚餐吃蟹</h1>
+                <h1>札幌市區散策 ➔ 北海道神宮 ➔ 晚餐吃蟹</h1>
                 <div class="subtitle">12/10第二天｜感受雪景神宮與鮮美螃蟹饗宴🦀</div>
             </div>
 
             <div class="content-section">
                 <div class="photo-box">
-                    <div class="photo-card">
-                        <img src="day2-1.jpg" alt="飯店早餐">
-                        <div class="photo-caption">晨光美味早餐</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day2-2.jpg" alt="北海道神宮">
-                        <div class="photo-caption">莊嚴雪白神宮參拜</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day2-3.jpg" alt="北海道神宮必買限定梅酒">
-                        <div class="photo-caption"><strong>必買限定梅酒</strong></div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day2-4.jpg" alt="白色戀人公園">
-                        <div class="photo-caption">白色戀人公園</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day2-5.jpg" alt="狸小路">
-                        <div class="photo-caption">狸小路商店街血拼</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day2-6.jpg" alt="夜景">
-                        <div class="photo-caption">札幌夜景點綴</div>
-                    </div>
+                    <img src="day2-1.jpg" alt="Day2 照片1">
+                    <img src="day2-2.jpg" alt="Day2 照片2">
+                    <img src="day2-3.jpg" alt="Day2 照片3">
+                    <img src="day2-4.jpg" alt="Day2 照片4">
+                    <img src="day2-5.jpg" alt="Day2 照片5">
+                    <img src="day2-6.jpg" alt="Day2 照片6">
                 </div>
 
                 <div class="timeline-box">
@@ -344,67 +265,43 @@
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time">07:30</div>
-                        <div class="desc">🥞 <strong>吃早餐</strong><br>享用美味早餐。</div>
+                        <div class="time">09:30</div>
+                        <div class="desc">🥞 <strong>悠閒早晨與早餐</strong><br>享用美味早餐，準備展開一日行程。</div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time">09:00</div>
-                        <div class="desc">⛩️ <strong>北海道神宮</strong><br>從飯店搭乘大眾運輸工具前往<strong>北海道神宮 。</strong><br>建議搭車路線與詳細資訊如下：</br><strong>１步行：從飯店步行至最近的地鐵站 例如 <strong>南北線「薄野站 」。<br>２地鐵轉乘：
-                        搭乘地鐵 南北線至「大通站」下車。</br>站內轉乘地鐵東西線，從大通站搭往宮之澤方向，至「圓山公園站」下車。</br>
-                        步行：從圓山公園站步行穿過圓山公園，即可抵達北海道神宮（步行時間約 15 分鐘）。<br> <strong>總花費時間：</strong>約 <strong>34 </strong>分鐘</br></div>
+                        <div class="time">10:30</div>
+                        <div class="desc">⛩️ <strong>北海道神宮參拜</strong><br>搭乘地下鐵至中島公園或圓山公園，感受莊嚴的雪中神社氛圍。</div>
                     </div>
 
                     <div class="timeline-item">
-                        <div class="time">11:30</div>
-                        <div class="desc">🦀 <strong>午餐：找地方吃吃</strong></div>
-                     </div>
-                    <div class="timeline-item">
-                        <div class="time"1>14:30</div>
-                        <div class="desc">⛇ 白色戀人公園:建議搭車路線與詳細資訊如下：</strong><br>１步行：<strong></br>北海道神宮步行至地下鐵東西線的「圓山公園站」。<br>２搭乘地鐵 東西線（往宮之澤方向），至終點站 「宮之澤站」 下車。
-                  宮之澤站步行約 5 至 7 分鐘即可抵達白色戀人公園。。<br> <strong>總花費時間：</strong>約 <strong>34 </strong>分鐘</br></div>
+                        <div class="time">13:00</div>
+                        <div class="desc">🦀 <strong>午餐：札幌市區享用美味螃蟹料理</strong><br>品嚐新鮮肥美的帝王蟹與毛蟹。</div>
                     </div>
-                    
+
                     <div class="timeline-item">
                         <div class="time">16:00</div>
                         <div class="desc">🛍️ <strong>狸小路商店街血拼</strong><br>藥妝、伴手禮一次買齊。</div>
                     </div>
-                      </div>
-                    </div>
                 </div>
-             <!-- ==================== DAY 3 ==================== -->
+            </div>
+        </div>
+
+        <!-- ==================== DAY 3 (6張圖) ==================== -->
         <div id="day3" class="day-block">
             <div class="page-header">
-                <h1>日本北海道經典一日遊 ／</h1><br>旭山動物園／精靈路台四季採之丘／青池／白須瀑布
-                <div class="subtitle">12/11第三天｜日本北海道一日遊 ／</div>
+                <h1>定山溪溫泉散策 ➔ 雪見溫泉療癒</h1>
+                <div class="subtitle">12/11第三天｜享受溫暖的雪中露天風呂♨️</div>
             </div>
 
             <div class="content-section">
                 <div class="photo-box">
-                    <div class="photo-card">
-                        <img src="day3-1.jpg" alt="溫泉專車">
-                        <div class="photo-caption">搭乘定山溪專車</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day3-2.jpg" alt="雪景山脈">
-                        <div class="photo-caption">沿途雪白山景</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day3-3.jpg" alt="溫泉大廳">
-                        <div class="photo-caption">溫泉飯店大廳</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day3-4.jpg" alt="露天風呂">
-                        <div class="photo-caption">極致雪見露天風呂</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day3-5.jpg" alt="會席料理">
-                        <div class="photo-caption">精緻日式會席料理</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day3-6.jpg" alt="溫泉街夜景">
-                        <div class="photo-caption">溫泉街夜間散步</div>
-                    </div>
+                    <img src="day3-1.jpg" alt="Day3 照片1">
+                    <img src="day3-2.jpg" alt="Day3 照片2">
+                    <img src="day3-3.jpg" alt="Day3 照片3">
+                    <img src="day3-4.jpg" alt="Day3 照片4">
+                    <img src="day3-5.jpg" alt="Day3 照片5">
+                    <img src="day3-6.jpg" alt="Day3 照片6">
                 </div>
 
                 <div class="timeline-box">
@@ -431,7 +328,7 @@
             </div>
         </div>
 
-        <!-- ==================== DAY 4 ==================== -->
+        <!-- ==================== DAY 4 (6張圖) ==================== -->
         <div id="day4" class="day-block">
             <div class="page-header">
                 <h1>札幌 ➔ 小樽浪漫運河一日遊</h1>
@@ -440,30 +337,12 @@
 
             <div class="content-section">
                 <div class="photo-box">
-                    <div class="photo-card">
-                        <img src="day4-1.jpg" alt="JR海景">
-                        <div class="photo-caption">海景鐵路風光</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day4-2.jpg" alt="小樽運河">
-                        <div class="photo-caption">經典小樽運河雪景</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day4-3.jpg" alt="政壽司">
-                        <div class="photo-caption">美味政壽司午餐</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day4-4.jpg" alt="音樂盒堂">
-                        <div class="photo-caption">堺町通音樂盒堂</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day4-5.jpg" alt="玻璃工房">
-                        <div class="photo-caption">精緻玻璃工藝品</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day4-6.jpg" alt="浪漫街景">
-                        <div class="photo-caption">浪漫煤氣燈街道</div>
-                    </div>
+                    <img src="day4-1.jpg" alt="Day4 照片1">
+                    <img src="day4-2.jpg" alt="Day4 照片2">
+                    <img src="day4-3.jpg" alt="Day4 照片3">
+                    <img src="day4-4.jpg" alt="Day4 照片4">
+                    <img src="day4-5.jpg" alt="Day4 照片5">
+                    <img src="day4-6.jpg" alt="Day4 照片6">
                 </div>
 
                 <div class="timeline-box">
@@ -495,7 +374,7 @@
             </div>
         </div>
 
-        <!-- ==================== DAY 5 ==================== -->
+        <!-- ==================== DAY 5 (6張圖) ==================== -->
         <div id="day5" class="day-block">
             <div class="page-header">
                 <h1>札幌最後採購 ➔ 新千歲機場 ➔ 賦歸</h1>
@@ -504,30 +383,12 @@
 
             <div class="content-section">
                 <div class="photo-box">
-                    <div class="photo-card">
-                        <img src="day5-1.jpg" alt="退房">
-                        <div class="photo-caption">飯店退房準備出發</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day5-2.jpg" alt="伴手禮街">
-                        <div class="photo-caption">機場限定伴手禮街</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day5-3.jpg" alt="天空樂園">
-                        <div class="photo-caption">哆啦A夢天空樂園</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day5-4.jpg" alt="拉麵道場">
-                        <div class="photo-caption">北海道拉麵道場午餐</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day5-5.jpg" alt="候機大廳">
-                        <div class="photo-caption">新千歲機場候機</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day5-6.jpg" alt="快樂返航">
-                        <div class="photo-caption">搭機快樂返回台灣</div>
-                    </div>
+                    <img src="day5-1.jpg" alt="Day5 照片1">
+                    <img src="day5-2.jpg" alt="Day5 照片2">
+                    <img src="day5-3.jpg" alt="Day5 照片3">
+                    <img src="day5-4.jpg" alt="Day5 照片4">
+                    <img src="day5-5.jpg" alt="Day5 照片5">
+                    <img src="day5-6.jpg" alt="Day5 照片6">
                 </div>
 
                 <div class="timeline-box">
@@ -555,28 +416,6 @@
         </div>
 
     </div>
-
-    <!-- 自動飄雪 JavaScript 特效 -->
-    <script>
-        function createSnowflake() {
-            const snowflake = document.createElement('div');
-            snowflake.classList.add('snowflake');
-            snowflake.innerHTML = '❄';
-            
-            snowflake.style.left = Math.random() * window.innerWidth + 'px';
-            snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
-            
-            const duration = Math.random() * 5 + 5;
-            snowflake.style.animationDuration = duration + 's';
-            
-            document.body.appendChild(snowflake);
-
-            setTimeout(() => {
-                snowflake.remove();
-            }, duration * 1000);
-        }
-
-        setInterval(createSnowflake, 300);
-    </script>
 </body>
+</html>
 </html>

@@ -12,7 +12,7 @@
             margin: 0;
             padding: 0;
             color: #333333;
-            scroll-behavior: smooth; /* 平滑滾動 */
+            scroll-behavior: smooth;
             overflow-x: hidden;
             position: relative;
         }
@@ -111,15 +111,14 @@
             align-items: flex-start;
         }
 
-        /* 左側照片區：每天 6 張圖片排版（網格） */
+        /* 左側照片區：每天 6 張圖片網格 */
         .photo-box {
             flex: 1.3;
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* 2欄排列 */
+            grid-template-columns: repeat(2, 1fr);
             gap: 15px;
         }
         
-        /* 圖片卡片（包含圖片與說明文字） */
         .photo-card {
             background: #fff;
             padding: 8px;
@@ -136,7 +135,6 @@
             border-radius: 3px;
         }
 
-        /* 圖片下方文字說明 */
         .photo-caption {
             font-size: 0.75rem;
             color: #666;
@@ -196,6 +194,19 @@
             font-weight: bold;
         }
 
+        /* 提示資訊專用樣式 */
+        .tips-box {
+            background: #fff;
+            border: 1px solid #dcd6c8;
+            padding: 20px;
+            margin-top: 40px;
+            border-radius: 4px;
+        }
+        .tips-box h3 {
+            margin-top: 0;
+            color: #8c3b2e;
+        }
+
         /* 響應式手機排版調整 */
         @media (max-width: 768px) {
             .content-section {
@@ -211,11 +222,11 @@
 
     <!-- 上方導覽列 -->
     <nav>
-        <a href="#day1">Day 1 啟程 ⇢抵達</a>
-        <a href="#day2">Day 2 北海道神宮 ▪ 吃蟹</a>
-        <a href="#day3">Day 3 一日遊程</a>
-        <a href="#day4">Day 4 小樽</a>
-        <a href="#day5">Day 5 回程</a>
+        <a href="#day1">Day 1 抵達・燈飾</a>
+        <a href="#day2">Day 2 北海道神宮・白色戀人・夜景</a>
+        <a href="#day3">Day 3 旭山動物園・精靈露台</a>
+        <a href="#day4">Day 4 小樽・余市・帝王蟹吃到飽</a>
+        <a href="#day5">Day 5 二条市場・北海道大學・回家</a>
     </nav>
 
     <div class="wrapper">
@@ -223,80 +234,37 @@
         <!-- ==================== DAY 1 ==================== -->
         <div id="day1" class="day-block">
             <div class="page-header">
-                <h1>桃園 ✈️ 新千歲機場 ➔ 札幌</h1>
-                <div class="subtitle">12/9抵達日✈｜捕捉可愛的哆啦A夢與初雪氣息❄️</div>
+                <h1>抵達札幌・大通公園與電視塔夜景・狸小路血拼</h1>
+                <div class="subtitle">12月9日（三）｜酷航直飛 ➔ 薄野飯店 ➔ 燈飾與藥妝血拼</div>
             </div>
 
             <div class="content-section">
                 <div class="photo-box">
-                    <div class="photo-card">
-                        <img src="2.jpg" alt="機場打卡">
-                        <div class="photo-caption">新千歲機場哆啦A夢迎賓</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day1-2.jpg" alt="JR列車">
-                        <div class="photo-caption">搭乘 JR 快速列車</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="3.jpg" alt="飯店大廳">
-                        <div class="photo-caption">薄野飯店 Check-in</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day1-4.jpg" alt="街道雪景">
-                        <div class="photo-caption">初雪中的札幌街頭</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day1-5.jpg" alt="晚餐">
-                        <div class="photo-caption">道地拉麵晚餐</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day1-6.jpg" alt="居酒屋小酌">
-                        <div class="photo-caption">深夜居酒屋小酌</div>
-                    </div>
+                    <div class="photo-card"><img src="2.png" alt="機場迎賓"><div class="photo-caption">新千歲機場迎賓</div></div>
+                    <div class="photo-card"><img src="day1-2.jpg" alt="JR快速列車"><div class="photo-caption">搭乘 JR 快速 Airport</div></div>
+                    <div class="photo-card"><img src="day1-3.jpg" alt="薄野飯店"><div class="photo-caption">入住薄野飯店</div></div>
+                    <div class="photo-card"><img src="day1-4.jpg" alt="大通公園燈飾"><div class="photo-caption">大通公園冬季燈飾</div></div>
+                    <div class="photo-card"><img src="day1-5.jpg" alt="札幌拉麵"><div class="photo-caption">溫暖療癒札幌拉麵</div></div>
+                    <div class="photo-card"><img src="day1-6.jpg" alt="狸小路唐吉訶德"><div class="photo-caption">狸小路與唐吉訶德血拼</div></div>
                 </div>
 
                 <div class="timeline-box">
-                    <div class="timeline-title">
-                        <span>DAY 1</span>
-                        <span>抵達新千歲⛇</span>
-                    </div>
-
+                    <div class="timeline-title"><span>DAY 1</span><span>抵達札幌・浪漫燈飾</span></div>
                     <div class="timeline-item">
                         <div class="time">12:15</div>
-                        <div class="desc">✈️ <b>酷航起飛</b><br>桃園機場出發，直飛新千歲。</div>
+                        <div class="desc">✈️ <b>搭乘酷航起飛</b><br>展開期待已久的北海道冬雪之旅！</div>
                     </div>
-
                     <div class="timeline-item">
                         <div class="time">17:00</div>
-                        <div class="desc"><b>降落新千歲機場⛄</b><br>抵達航廈，會有可愛的<span>哆啦A夢玩偶歡迎您！</span></div>
+                        <div class="desc">🚆 <b>抵達新千歲機場（車程約 37 分鐘）</b><br>搭乘 JR 快速 Airport 直達札幌站，轉乘地下鐵南北線至「薄野站」，步行入住 Holiday Inn Express Sapporo Susukino。</div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="time">18:30</div>
-                        <div class="desc">
-                            🏨 <strong>Holiday Inn Express 札幌薄野飯店 Check-in</strong><br>
-                            🚆 搭乘 JR 快速エアポート：從新千歲機場地下一樓的新千歲機場 JR 車站出發，搭乘開往札幌方向的 JR 快速列車。車程大約 37 分鐘即可抵達「札幌站」。<br>
-                            🔄 轉乘札幌市營地下鐵：<br>
-                            抵達札幌站後，跟隨指標前往地下鐵南北線的「札幌站」。<br>
-                            🚇 搭乘南北線（往真駒內方向），坐 2 站即可到達「薄野站」。再步行至飯店：<br>
-                            🚶 從薄野站出站後，步行約 3 至 5 分鐘即可抵達飯店。
-                        </div>
+                        <div class="time">晚餐</div>
+                        <div class="desc">🍜 <b>薄野美味拉麵</b><br>享用溫暖療癒的札幌拉麵，驅散冬日寒意。</div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="time">19:30</div>
-                        <div class="desc">
-                            🍜 <strong>晚餐時光</strong><br>
-                            外出覓食札幌道地美食。
-                        </div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="time">22:00</div>
-                        <div class="desc">
-                            🍶 <strong>居酒屋開張</strong><br>
-                            休息或喝喝小酒。
-                        </div>
+                        <div class="time">夜間散策</div>
+                        <div class="desc">✨ <b>大通公園與札幌電視塔</b><br>漫步欣賞璀璨迷人的冬季浪漫燈飾，隨後順路至狸小路商店街與 MEGA Don Quijote 採買藥妝與伴手禮。</div>
                     </div>
                 </div>
             </div>
@@ -305,127 +273,72 @@
         <!-- ==================== DAY 2 ==================== -->
         <div id="day2" class="day-block">
             <div class="page-header">
-                <h1>飯店➔ 北海道神宮 ➔ 晚餐吃蟹</h1>
-                <div class="subtitle">12/10第二天｜感受雪景神宮與鮮美螃蟹饗宴🦀</div>
+                <h1>北海道神宮、白色戀人、超大間 AEON ＋ 藻岩山夜景</h1>
+                <div class="subtitle">12月10日（四）｜神宮參拜 ➔ 白色戀人 ➔ 發寒AEON ➔ 新三大夜景</div>
             </div>
 
             <div class="content-section">
                 <div class="photo-box">
-                    <div class="photo-card">
-                        <img src="day2-1.jpg" alt="飯店早餐">
-                        <div class="photo-caption">晨光美味早餐</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day2-2.jpg" alt="北海道神宮">
-                        <div class="photo-caption">莊嚴雪白神宮參拜</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day2-3.jpg" alt="北海道神宮必買限定梅酒">
-                        <div class="photo-caption"><strong>必買限定梅酒</strong></div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day2-4.jpg" alt="白色戀人公園">
-                        <div class="photo-caption">白色戀人公園</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day2-5.jpg" alt="狸小路">
-                        <div class="photo-caption">狸小路商店街血拼</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day2-6.jpg" alt="夜景">
-                        <div class="photo-caption">札幌夜景點綴</div>
-                    </div>
+                    <div class="photo-card"><img src="day2-1.jpg" alt="北海道神宮"><div class="photo-caption">莊嚴北海道神宮參拜</div></div>
+                    <div class="photo-card"><img src="day2-2.jpg" alt="白色戀人公園"><div class="photo-caption">夢幻白色戀人公園</div></div>
+                    <div class="photo-card"><img src="day2-3.jpg" alt="AEON MALL"><div class="photo-caption">AEON MALL Sapporo-Hassamu</div></div>
+                    <div class="photo-card"><img src="day2-4.jpg" alt="藻岩山纜車"><div class="photo-caption">藻岩山纜車接駁</div></div>
+                    <div class="photo-card"><img src="day2-5.jpg" alt="日本新三大夜景"><div class="photo-caption">日本新三大璀璨夜景</div></div>
+                    <div class="photo-card"><img src="day2-6.jpg" alt="湯咖哩"><div class="photo-caption">薄野濃郁湯咖哩晚餐</div></div>
                 </div>
 
                 <div class="timeline-box">
-                    <div class="timeline-title">
-                        <span>DAY 2</span>
-                        <span>北海道神宮・吃蟹</span>
-                    </div>
-
+                    <div class="timeline-title"><span>DAY 2</span><span>神宮・白色戀人・夜景</span></div>
                     <div class="timeline-item">
-                        <div class="time">07:30</div>
-                        <div class="desc">🥞 <strong>吃早餐</strong><br>享用美味早餐。</div>
+                        <div class="time">上午</div>
+                        <div class="desc">⛩️ <b>北海道神宮參拜（車程約 25 分鐘）</b><br>從「薄野站」至「大通站」轉東西線至「圓山公園站」，1號出口步行約 15 分鐘抵達。</div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="time">09:00</div>
-                        <div class="desc">⛩️ <strong>北海道神宮</strong><br>從飯店搭乘大眾運輸工具前往<strong>北海道神宮 。</strong><br>建議搭車路線與詳細資訊如下：</br><strong>１步行：從飯店步行至最近的地鐵站 例如 <strong>南北線「薄野站 」。<br>２地鐵轉乘：
-                        搭乘地鐵 南北線至「大通站」下車。</br>站內轉乘地鐵東西線，從大通站搭往宮之澤方向，至「圓山公園站」下車。</br>
-                        步行：從圓山公園站步行穿過圓山公園，即可抵達北海道神宮（步行時間約 15 分鐘）。<br> <strong>總花費時間：</strong>約 <strong>34 </strong>分鐘</br></div>
+                        <div class="time">中午</div>
+                        <div class="desc">🍫 <b>白色戀人公園（車程約 15 分鐘）</b><br>從「圓山公園站」搭乘東西線至終點站「宮之澤站」，步行約 7 分鐘抵達。</div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="time">11:30</div>
-                        <div class="desc">🦀 <strong>午餐：找地方吃吃</strong></div>
-                     </div>
-                    <div class="timeline-item">
-                        <div class="time"1>14:30</div>
-                        <div class="desc">⛇ 白色戀人公園:建議搭車路線與詳細資訊如下：</strong><br>１步行：<strong></br>北海道神宮步行至地下鐵東西線的「圓山公園站」。<br>２搭乘地鐵 東西線（往宮之澤方向），至終點站 「宮之澤站」 下車。
-                  宮之澤站步行約 5 至 7 分鐘即可抵達白色戀人公園。。<br> <strong>總花費時間：</strong>約 <strong>34 </strong>分鐘</br></div>
+                        <div class="time">下午</div>
+                        <div class="desc">🛍️ <b>AEON MALL Sapporo-Hassamu（車程約 25 分鐘）</b><br>從宮之澤站搭地鐵至「發寒南站」轉公車（或搭 JR 至「發寒站」）前往超大商場盡情血拼。</div>
                     </div>
-                    
                     <div class="timeline-item">
-                        <div class="time">16:00</div>
-                        <div class="desc">🛍️ <strong>狸小路商店街血拼</strong><br>藥妝、伴手禮一次買齊。</div>
+                        <div class="time">傍晚</div>
+                        <div class="desc">🚠 <b>藻岩山夜景（車程約 35 分鐘）</b><br>返回市區，搭乘札幌市電至「纜車入口站」，轉免費接駁巴士登上藻岩山纜車欣賞日本新三大夜景。</div>
                     </div>
-                      </div>
+                    <div class="timeline-item">
+                        <div class="time">晚餐</div>
+                        <div class="desc">🍛 <b>薄野居酒屋或湯咖哩</b><br>回到薄野輕鬆享用美食。</div>
                     </div>
                 </div>
-             <!-- ==================== DAY 3 ==================== -->
+            </div>
+        </div>
+
+        <!-- ==================== DAY 3 (已修正格式) ==================== -->
         <div id="day3" class="day-block">
             <div class="page-header">
-                <h1>日本北海道經典一日遊 ／</h1><br>旭山動物園／精靈路台四季採之丘／青池／白須瀑布
-                <div class="subtitle">12/11第三天｜日本北海道一日遊 ／</div>
+                <h1>一日遊：旭山動物園・精靈露台・四季彩之丘・白須瀑布</h1>
+                <div class="subtitle">12月11日（五）｜極地動物園 ➔ 美瑛白金青池 ➔ 精靈露台夢幻點燈</div>
             </div>
 
             <div class="content-section">
                 <div class="photo-box">
-                    <div class="photo-card">
-                        <img src="day3-1.jpg" alt="溫泉專車">
-                        <div class="photo-caption">搭乘定山溪專車</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day3-2.jpg" alt="雪景山脈">
-                        <div class="photo-caption">沿途雪白山景</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day3-3.jpg" alt="溫泉大廳">
-                        <div class="photo-caption">溫泉飯店大廳</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day3-4.jpg" alt="露天風呂">
-                        <div class="photo-caption">極致雪見露天風呂</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day3-5.jpg" alt="會席料理">
-                        <div class="photo-caption">精緻日式會席料理</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day3-6.jpg" alt="溫泉街夜景">
-                        <div class="photo-caption">溫泉街夜間散步</div>
-                    </div>
+                    <div class="photo-card"><img src="day3-1.jpg" alt="旭山動物園"><div class="photo-caption">旭山動物園企鵝散步</div></div>
+                    <div class="photo-card"><img src="day3-2.jpg" alt="北極熊館"><div class="photo-caption">超人氣北極熊與海豹</div></div>
+                    <div class="photo-card"><img src="day3-3.jpg" alt="美瑛白金青池"><div class="photo-caption">美瑛雪景與白金青池</div></div>
+                    <div class="photo-card"><img src="day3-4.jpg" alt="白須瀑布"><div class="photo-caption">浪漫壯麗白須瀑布</div></div>
+                    <div class="photo-card"><img src="day3-5.jpg" alt="精靈露台"><div class="photo-caption">精靈露台森林木屋</div></div>
+                    <div class="photo-card"><img src="day3-6.jpg" alt="札幌晚餐"><div class="photo-caption">札幌車站周邊晚餐</div></div>
                 </div>
 
                 <div class="timeline-box">
-                    <div class="timeline-title">
-                        <span>DAY 3</span>
-                        <span>溫泉療癒日</span>
-                    </div>
-
+                    <div class="timeline-title"><span>DAY 3</span><span>道北極地動物園與精靈露台</span></div>
                     <div class="timeline-item">
-                        <div class="time">10:00</div>
-                        <div class="desc">🚌 <strong>搭乘溫泉專車出發</strong><br>前往定山溪溫泉區，沿途欣賞雪白山景。</div>
+                        <div class="time">全天行程</div>
+                        <div class="desc">🚌 <b>KKday / Klook 觀光巴士一日遊</b><br>早晨於札幌市區指定地點集合出發，深度遊覽道北極地動物園、美瑛白金青池與童話感十足的精靈露台。</div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="time">12:30</div>
-                        <div class="desc">♨️ <strong>溫泉飯店 Check-in & 泡湯</strong><br>換上浴衣，享受極致的雪見露天溫泉。</div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="time">18:00</div>
-                        <div class="desc">🍱 <strong>會席料理晚餐</strong><br>品嚐精緻的日式傳統會席料理。</div>
+                        <div class="time">夜晚</div>
+                        <div class="desc">🍽️ <b>札幌站周邊晚餐</b><br>傍晚返回札幌市區，在札幌車站附近享用美味佳餚。</div>
                     </div>
                 </div>
             </div>
@@ -434,62 +347,33 @@
         <!-- ==================== DAY 4 ==================== -->
         <div id="day4" class="day-block">
             <div class="page-header">
-                <h1>札幌 ➔ 小樽浪漫運河一日遊</h1>
-                <div class="subtitle">12/12第四天｜漫步玻璃工房與浪漫小樽運河✨</div>
+                <h1>浪漫小樽運河與余市蒸餾所 ＋ 晚上帝王蟹吃到飽</h1>
+                <div class="subtitle">12月12日（六）｜余市蒸餾所 ➔ 小樽運河散策 ➔ Seafood Buffet NANDA 帝王蟹放題</div>
             </div>
 
             <div class="content-section">
                 <div class="photo-box">
-                    <div class="photo-card">
-                        <img src="day4-1.jpg" alt="JR海景">
-                        <div class="photo-caption">海景鐵路風光</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day4-2.jpg" alt="小樽運河">
-                        <div class="photo-caption">經典小樽運河雪景</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day4-3.jpg" alt="政壽司">
-                        <div class="photo-caption">美味政壽司午餐</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day4-4.jpg" alt="音樂盒堂">
-                        <div class="photo-caption">堺町通音樂盒堂</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day4-5.jpg" alt="玻璃工房">
-                        <div class="photo-caption">精緻玻璃工藝品</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day4-6.jpg" alt="浪漫街景">
-                        <div class="photo-caption">浪漫煤氣燈街道</div>
-                    </div>
+                    <div class="photo-card"><img src="day4-1.jpg" alt="余市蒸餾所"><div class="photo-caption">Nikka Whiskey 余市蒸餾所</div></div>
+                    <div class="photo-card"><img src="day4-2.jpg" alt="小樽運河"><div class="photo-caption">浪漫小樽運河與雪景</div></div>
+                    <div class="photo-card"><img src="day4-3.jpg" alt="音樂盒堂"><div class="photo-caption">堺町通音樂盒堂與哨子館</div></div>
+                    <div class="photo-card"><img src="day4-4.jpg" alt="LeTAO甜點"><div class="photo-caption">LeTAO 香濃美味甜點</div></div>
+                    <div class="photo-card"><img src="day4-5.jpg" alt="Seafood Buffet NANDA"><div class="photo-caption">Seafood Buffet NANDA 烤肉</div></div>
+                    <div class="photo-card"><img src="day4-6.jpg" alt="帝王蟹吃到飽"><div class="photo-caption">90分鐘豪華海鮮帝王蟹放題</div></div>
                 </div>
 
                 <div class="timeline-box">
-                    <div class="timeline-title">
-                        <span>DAY 4</span>
-                        <span>小樽浪漫行</span>
-                    </div>
-
+                    <div class="timeline-title"><span>DAY 4</span><span>余市・小樽・帝王蟹吃到飽</span></div>
                     <div class="timeline-item">
-                        <div class="time">09:00</div>
-                        <div class="desc">🚆 <strong>搭乘 JR 前往小樽</strong><br>沿著海景鐵路，車程約 40 分鐘。</div>
+                        <div class="time">上午</div>
+                        <div class="desc">🍷 <b>余市蒸餾所（車程約 1 小時 15 分）</b><br>從 JR「札幌站」搭乘函館本線特急或快速列車至「余市站」，出站步行 3 分鐘抵達 Nikka Whiskey 北海道工廠（記得提前預約！）。</div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="time">10:30</div>
-                        <div class="desc">🚶 <strong>小樽運河與倉庫群散策</strong><br>欣賞浪漫的復古歐風建築與雪景交織。</div>
+                        <div class="time">下午至傍晚</div>
+                        <div class="desc">🚶 <b>小樽運河與浪漫街景（車程約 25 分鐘）</b><br>搭車返回「小樽站」，順著中央通步行約 10 分鐘抵達小樽運河，逛哨子館、音樂盒堂，品嚐 LeTAO 香濃甜點。</div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="time">13:00</div>
-                        <div class="desc">🍣 <strong>政壽司午餐</strong><br>品嚐新鮮道地的小樽握壽司。</div>
-                    </div>
-
-                    <div class="timeline-item">
-                        <div class="time">15:30</div>
-                        <div class="desc">🕯️ <strong>堺町通商店街與音樂盒堂</strong><br>逛玻璃工藝品、買伴手禮。</div>
+                        <div class="time">晚上</div>
+                        <div class="desc">🦀 <b>豪華帝王蟹吃到飽（車程約 40 分鐘）</b><br>搭乘 JR 快速列車返回札幌站，轉地鐵回到薄野，前往 Seafood Buffet NANDA 享用 90 分鐘的豪華海鮮帝王蟹烤肉吃到飽！</div>
                     </div>
                 </div>
             </div>
@@ -498,60 +382,46 @@
         <!-- ==================== DAY 5 ==================== -->
         <div id="day5" class="day-block">
             <div class="page-header">
-                <h1>札幌最後採購 ➔ 新千歲機場 ➔ 賦歸</h1>
-                <div class="subtitle">12/13第五天｜帶著滿滿回憶與戰利品快樂返航✈️</div>
+                <h1>二条市場早午餐、北海道大學散策與快樂賦歸</h1>
+                <div class="subtitle">12月13日（日）｜二条市場海鮮丼 ➔ 北海道大學 ➔ 新千歲機場血拼賦歸</div>
             </div>
 
             <div class="content-section">
                 <div class="photo-box">
-                    <div class="photo-card">
-                        <img src="day5-1.jpg" alt="退房">
-                        <div class="photo-caption">飯店退房準備出發</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day5-2.jpg" alt="伴手禮街">
-                        <div class="photo-caption">機場限定伴手禮街</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day5-3.jpg" alt="天空樂園">
-                        <div class="photo-caption">哆啦A夢天空樂園</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day5-4.jpg" alt="拉麵道場">
-                        <div class="photo-caption">北海道拉麵道場午餐</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day5-5.jpg" alt="候機大廳">
-                        <div class="photo-caption">新千歲機場候機</div>
-                    </div>
-                    <div class="photo-card">
-                        <img src="day5-6.jpg" alt="快樂返航">
-                        <div class="photo-caption">搭機快樂返回台灣</div>
-                    </div>
+                    <div class="photo-card"><img src="day5-1.jpg" alt="二条市場"><div class="photo-caption">二条市場豪華海鮮早午餐</div></div>
+                    <div class="photo-card"><img src="day5-2.jpg" alt="北海道大學"><div class="photo-caption">北海道大學優美冬景</div></div>
+                    <div class="photo-card"><img src="day5-3.jpg" alt="新千歲機場名產街"><div class="photo-caption">新千歲機場豐富名產街</div></div>
+                    <div class="photo-card"><img src="day5-4.jpg" alt="哆啦A夢天空樂園"><div class="photo-caption">哆啦A夢空中樂園</div></div>
+                    <div class="photo-card"><img src="day5-5.jpg" alt="Royce朱古力世界"><div class="photo-caption">Royce 朱古力世界</div></div>
+                    <div class="photo-card"><img src="day5-6.jpg" alt="快樂賦歸"><div class="photo-caption">搭乘酷航平安返台</div></div>
                 </div>
 
                 <div class="timeline-box">
-                    <div class="timeline-title">
-                        <span>DAY 5</span>
-                        <span>快樂返航</span>
-                    </div>
-
+                    <div class="timeline-title"><span>DAY 5</span><span>市場海鮮・大學巡禮・機場賦歸</span></div>
                     <div class="timeline-item">
-                        <div class="time">09:30</div>
-                        <div class="desc">🛒 <strong>最後採買與退房</strong><br>買齊北海道限定甜點與伴手禮。</div>
+                        <div class="time">08:30 - 10:30</div>
+                        <div class="desc">🦀 <b>二条市場豪華海鮮早午餐</b><br>從飯店步行約 10 分鐘（或搭地鐵至豐水薄野站），品嚐現烤海鮮丼或澎湃帝王蟹腳。</div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="time">12:00</div>
-                        <div class="desc">✈️ <strong>前往新千歲機場</strong><br>逛機場內的哆啦A夢愉快的天空樂園、拉麵道場。</div>
+                        <div class="time">10:30 - 12:00</div>
+                        <div class="desc">🎓 <b>北海道大學校園巡禮（車程約 15 分鐘）</b><br>從二条市場步行至東西線「大通站」，轉南北線至「北12條站」下車，漫步欣賞優美校園冬景。</div>
                     </div>
-
                     <div class="timeline-item">
-                        <div class="time">16:00</div>
-                        <div class="desc">🛫 <strong>搭機返回台灣</strong><br>結束美好的北海道冬日之旅！</div>
+                        <div class="time">下午賦歸</div>
+                        <div class="desc">✈️ <b>新千歲機場血拼與搭機</b><br>14:30 返回札幌站，搭乘 JR 快速 Airport 號（約 37 分鐘）直達新千歲機場。逛名產街、哆啦A夢空中樂園與 Royce 朱古力世界。<br><b>18:13</b> 搭乘酷航起飛 ➔ <b>22:05</b> 平安抵達桃園機場。</div>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- ==================== 旅程重要注意事項 ==================== -->
+        <div class="tips-box">
+            <h3>💡 旅程重要注意事項</h3>
+            <ul>
+                <li><strong>免稅新制（先付後退）注意事項：</strong>因應日本免稅新規，離境當天在機場辦理登機與托運行李之前，務必先透過機場的免稅確認機台或系統完成海關確認。切勿先將免稅品直接塞進托運行李箱，以免海關抽查實體商品時無法出示。建議第五天提早至起飛前 2.5 至 3 小時抵達新千歲機場（約下午 3 點左右抵達），保留充裕時間處理免稅手續及逛伴手禮街。</li>
+                <li><strong>冬季保暖與鞋具防滑：</strong>12 月的北海道氣溫多在零度以下且積雪結冰，市區街道常有看起來像濕地、其實非常滑的「黑冰」。建議穿著防滑、防水的雪靴或登山鞋，並準備保暖厚外套、手套、毛帽及發熱衣物。</li>
+                <li><strong>預約性質景點提醒：</strong>余市蒸餾所及 Seafood Buffet NANDA（帝王蟹吃到飽）非常熱門，務必提早數週至一個月線上完成預約，以免當天撲空或久候。</li>
+            </ul>
         </div>
 
     </div>
